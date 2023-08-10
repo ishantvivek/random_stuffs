@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download requested file</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #fdfaff;
+    }
+
+    .main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .downloadInfo {
+        font-size: 2em;
+        padding: 0 60px;
+    }
+
+    .link {
+        padding: 12px;
+        background-color: rgb(135, 76, 190);
+        border-radius: 2px;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .link:hover {
+        background-color: rgb(110, 30, 185);
+    }
+</style>
+
+<body>
+    <div class="main">
+        <span class="downloadInfo">
+            You have been redirected to a new page. Click below to download the requested file.
+        </span>
+        <span role="button" class="link" onclick="download()">Download</a>
+    </div>
+    <script>
+        function download() {
+            const params = new URLSearchParams(document.location.search);
+            const id = params.get('id');
+            alert(`query string is: ${id}`);
+        }
+    </script>
+</body>
+
+
+</html>
